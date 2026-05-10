@@ -13,6 +13,7 @@ const Navbar = () => {
     { name: "Destination", href: "/destination" },
     { name: "My Bookings", href: "/my-bookings" },
     { name: "Admin", href: "/admin" },
+    { name: "Add destination", href: "/add-destination" },
   ];
 
   const dashLinks = [
@@ -56,6 +57,7 @@ const Navbar = () => {
             src="/assets/Wanderlast.png"
             width={150}
             height={150}
+             className="w-35 h-auto"
             alt="logo"
           />
           </Link>
@@ -76,6 +78,7 @@ const Navbar = () => {
           width={90}
           height={90}
           alt="logo"
+           className="w-25 h-auto"
         />
 
       </Link>
