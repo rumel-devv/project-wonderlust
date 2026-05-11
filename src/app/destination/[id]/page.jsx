@@ -1,3 +1,5 @@
+import DeleteModal from "@/componetns/DeleteModal";
+import EditeModal from "@/componetns/EditeModal";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,9 +20,8 @@ const DestinationDetailsPage = async ({ params }) => {
   const res = await fetch(`http://localhost:8000/destination/${id}`, {
     cache: "no-store",
   });
-
   const destination = await res.json();
-
+  console.log(destination);
   const {
     destinationName,
     country,
@@ -49,16 +50,8 @@ const DestinationDetailsPage = async ({ params }) => {
 
         {/* Action Buttons */}
         <div className="flex items-center gap-3">
-          
-          <button className="border border-black px-4 py-2 rounded-xl flex gap-2 items-center hover:bg-black hover:text-white transition-all duration-300">
-            <FaEdit />
-            Edit
-          </button>
-
-          <button className="border border-red-500 text-red-500 px-4 py-2 rounded-xl flex gap-2 items-center hover:bg-red-500 hover:text-white transition-all duration-300">
-            <FaDeleteLeft />
-            Cancel
-          </button>
+         <EditeModal destination={destination} />
+         <DeleteModal destination={destination}/>
         </div>
       </div>
 
