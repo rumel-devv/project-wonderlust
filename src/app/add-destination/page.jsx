@@ -30,7 +30,7 @@ const AddDestinationPage = () => {
 
   return (
     <div className="w-full md:w-10/12 mx-auto py-4 p-3 md:py-10">
-      <h1 className="text-xl font-semibold">Choose Your destination..</h1>
+      <h1 className="text-xl font-semibold">Add Your favourite place..</h1>
       <form
         onSubmit={onSubmit}
         className="p-3 md:p-10 space-y-4 md:space-y-8 w-full md:w-6/12 mx-auto border border-sky-400 rounded-2xl mt-3"
