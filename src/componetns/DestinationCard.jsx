@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
+import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import {
   FaLocationDot,
   FaCalendarDays,
   FaClock,
-  FaArrowRight,
 } from "react-icons/fa6";
 
 const DestinationCard = ({ destination }) => {
@@ -15,11 +16,11 @@ const DestinationCard = ({ destination }) => {
     duration,
     departureDate,
     imageUrl,
-    description,
+   _id
   } = destination;
 
   return (
-    <div className="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100">
+    <div className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100">
       
       {/* Image */}
       <div className="relative overflow-hidden">
@@ -73,10 +74,12 @@ const DestinationCard = ({ destination }) => {
         </div>
 
         {/* Button */}
+      <Link href={`/destination/${_id}`}>
         <button className="w-full mt-2 bg-black hover:bg-orange-500 transition-all duration-300 text-white py-3 rounded-2xl font-semibold flex items-center justify-center gap-2">
-          Explore Now
-          <FaArrowRight />
+          Book Now
+          <FaExternalLinkSquareAlt/>
         </button>
+      </Link>
       </div>
     </div>
   );
