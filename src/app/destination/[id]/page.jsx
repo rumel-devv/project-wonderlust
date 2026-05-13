@@ -1,9 +1,8 @@
+import BookingCard from "@/componetns/BookingCard";
 import DeleteModal from "@/componetns/DeleteModal";
 import EditeModal from "@/componetns/EditeModal";
 import Image from "next/image";
 import Link from "next/link";
-
-import { FaEdit } from "react-icons/fa";
 
 import {
   FaArrowLeft,
@@ -11,7 +10,6 @@ import {
   FaCalendarDays,
   FaClock,
   FaTag,
-  FaDeleteLeft,
 } from "react-icons/fa6";
 
 const DestinationDetailsPage = async ({ params }) => {
@@ -21,7 +19,7 @@ const DestinationDetailsPage = async ({ params }) => {
     cache: "no-store",
   });
   const destination = await res.json();
-  console.log(destination);
+
   const {
     destinationName,
     country,
@@ -170,58 +168,8 @@ const DestinationDetailsPage = async ({ params }) => {
         </div>
 
         {/* Right Booking Card */}
-        <div className="lg:col-span-3">
-          
-          <div className="sticky top-10 bg-white border border-gray-200 rounded-3xl p-6 shadow-md">
-            
-            <p className="text-gray-500 text-sm mb-2">
-              Starting From
-            </p>
-
-            <h1 className="text-3xl font-bold text-orange-500 mb-6">
-              ${price}
-            </h1>
-
-            {/* Booking Info */}
-            <div className="space-y-5 border-y border-gray-200 py-5">
-              
-              <div className="flex justify-between items-center">
-                <span className="text-gray-500">
-                  Departure
-                </span>
-
-                <span className="font-semibold">
-                  {departureDate}
-                </span>
-              </div>
-
-              <div className="flex justify-between items-center">
-                <span className="text-gray-500">
-                  Duration
-                </span>
-
-                <span className="font-semibold">
-                  {duration}
-                </span>
-              </div>
-
-              <div className="flex justify-between items-center">
-                <span className="text-gray-500">
-                  Category
-                </span>
-
-                <span className="font-semibold">
-                  {category}
-                </span>
-              </div>
-            </div>
-
-            {/* Button */}
-            <button className="w-full bg-black hover:bg-orange-500 transition-all duration-300 text-white py-4 rounded-2xl font-semibold mt-6">
-              Book Now
-            </button>
-          </div>
-        </div>
+   
+         <BookingCard destination={destination} />
       </div>
     </div>
   );
