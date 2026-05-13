@@ -5,7 +5,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 
 const DeleteModal = ({destination}) => {
    const router = useRouter();
-    console.log(destination);
+    // console.log(destination);
     const {destinationName,_id} = destination ;
     
     const handleDelete = async () => {

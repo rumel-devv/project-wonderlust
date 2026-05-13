@@ -3,13 +3,14 @@
 import { authClient } from "@/lib/auth-client";
 import { DateField, Label } from "@heroui/react";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const BookingCard = ({ destination }) => {
-    const [departureDate, setdepartureDate] = useState(null);
+    const [departureDat, setdepartureDat] = useState(null);
       const {data: session,} = authClient.useSession()
        const user = session?.user 
-       console.log("departureDate",new Date(departureDate));
-       console.log('user in book card',user);
+  
+    //    console.log('user in book card',user);
   const {
     destinationName,
     country,
@@ -18,20 +19,35 @@ const BookingCard = ({ destination }) => {
     duration,
     imageUrl,
     description,
+    departureDate,
+    _id
   } = destination;
 
-  const handleBooking = () => {
+  const handleBooking = async () => {
     const bookingData = {
-          userId:user.id,
-          userName:user.name,
-          userImage:user.image,
+          userId:user?.id,
+          userName:user?.name,
+          userImage:user?.image,
           destinationName,
           country,
           category,
+           imageUrl,
           price,
-          departureDate: new Date(departureDate)
+         departureDat: new Date(departureDat)
     }
+    const res = await fetch ('http://localhost:8000/bookings',{
+        method:"POST" ,
+        headers:{
+        'content-type': 'application/json'
+        },
+        body:JSON.stringify(bookingData)
+    })
+    const data = await res.json()
+    console.log('data ',data);
+    toast.success(`You booked a trip for ${destinationName}`)
+
   }
+      
 
 
   return (
@@ -50,7 +66,7 @@ const BookingCard = ({ destination }) => {
 
         {/* Date Field */}
         <div className="mb-5">
-           <DateField onChange={setdepartureDate} value={departureDate} className="w-[256px]" name="date">
+           <DateField onChange={setdepartureDat} value={departureDat} className="w-[256px]" name="date">
         <Label>Birth date</Label>
         <DateField.Group>
           <DateField.Input>{(segment) => <DateField.Segment segment={segment} />}</DateField.Input>
