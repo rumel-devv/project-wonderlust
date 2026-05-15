@@ -1,6 +1,8 @@
 import BookingCard from "@/componetns/BookingCard";
 import DeleteModal from "@/componetns/DeleteModal";
 import EditeModal from "@/componetns/EditeModal";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,12 +16,19 @@ import {
 
 const DestinationDetailsPage = async ({ params }) => {
   const { id } = await params;
+  const token = await auth.api.getToken({
+    headers: await headers()
+  })
+
+  console.log('Headers',token);
 
   const res = await fetch(`http://localhost:8000/destination/${id}`, {
-    cache: "no-store",
+    cache: "no-store", headers:{
+      authorization:`Bearer ${token.token}`
+    }
   });
   const destination = await res.json();
-
+  
   const {
     destinationName,
     country,
@@ -30,6 +39,7 @@ const DestinationDetailsPage = async ({ params }) => {
     imageUrl,
     description,
   } = destination;
+console.log('destination',destinationName);
 
   return (
     <div className="w-11/12 lg:w-9/12 mx-auto py-10">
@@ -58,7 +68,7 @@ const DestinationDetailsPage = async ({ params }) => {
         
         <Image
           src={imageUrl}
-          alt={destinationName}
+          alt="destination name"
           width={1400}
           height={800}
           className="w-full h-[500px] object-cover"

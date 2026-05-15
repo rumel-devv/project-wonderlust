@@ -8,7 +8,7 @@ const DestinationMarque = async () => {
   const res = await fetch("http://localhost:8000/destination");
 
   const destinations = await res.json();
-  console.log(destinations);
+
 
   return (
     <section className="py-16 bg-[#f8fafc]">
