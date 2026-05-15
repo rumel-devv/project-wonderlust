@@ -1,4 +1,5 @@
 'use client'
+import { authClient } from "@/lib/auth-client";
 import { AlertDialog, Button } from "@heroui/react";
 import { useRouter } from "next/navigation";
 import { RiDeleteBin6Line } from "react-icons/ri";
@@ -9,10 +10,12 @@ const DeleteModal = ({destination}) => {
     const {destinationName,_id} = destination ;
     
     const handleDelete = async () => {
-        const res = await fetch(`http://localhost:8000/destination/${_id}`, {
+       const {data:tokenData} = await authClient.token()
+        const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/destination/${_id}`, {
         method: "DELETE",
         headers: {
           "content-type": "application/json",
+           authorization:`Bearer ${tokenData?.token}`
         },
         body: JSON.stringify(),
       });

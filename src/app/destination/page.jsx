@@ -2,7 +2,7 @@ import DestinationCard from "@/componetns/DestinationCard";
 import React from "react";
 
 const DestinationPage = async () => {
-  const res = await fetch("http://localhost:8000/destination");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/destination`);
   const destinations = await res.json();
   return (
     <div className="w-9/12 mx-auto py-6 space-y-6">

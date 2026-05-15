@@ -35,15 +35,21 @@ const BookingCard = ({ destination }) => {
           price,
          departureDat: new Date(departureDat)
     }
-    const res = await fetch ('http://localhost:8000/bookings',{
+
+    const {data:tokenData} = await authClient.token()
+  
+
+    const res = await fetch (`${process.env.NEXT_PUBLIC_URL}/bookings`,{
         method:"POST" ,
         headers:{
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        authorization:`Bearer ${tokenData?.token}`
+        
         },
         body:JSON.stringify(bookingData)
     })
+      console.log('tokendata',tokenData);
     const data = await res.json()
-    console.log('data ',data);
     toast.success(`You booked a trip for ${destinationName}`)
 
   }

@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 import { FaLocationDot } from "react-icons/fa6";
 
 const DestinationMarque = async () => {
-  const res = await fetch("http://localhost:8000/destination");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/destination`);
 
   const destinations = await res.json();
 

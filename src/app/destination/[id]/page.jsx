@@ -22,11 +22,11 @@ const DestinationDetailsPage = async ({ params }) => {
 
   console.log('Headers',token);
 
-  const res = await fetch(`http://localhost:8000/destination/${id}`, {
-    cache: "no-store", headers:{
-      authorization:`Bearer ${token.token}`
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/destination/${id}`, {
+   headers:{
+      authorization:`Bearer ${token?.token}`
     }
-  });
+  }, {cache : "no-store"})
   const destination = await res.json();
   
   const {

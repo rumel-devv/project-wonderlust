@@ -5,16 +5,18 @@ import { MdDelete } from "react-icons/md";
 
 const DeleteDialog = ({ bookingId }) => {
   const handleDelete = async () => {
-    const res = await fetch(`http://localhost:8000/bookings/${bookingId}`, {
+    
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/bookings/${bookingId}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
       },
     });
+    console.log('delete',tokenData);
     const data = await res.json()
     window.location.reload()
   };
-
+   
   return (
     <AlertDialog>
       {/* Trigger Button */}

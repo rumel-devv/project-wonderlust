@@ -8,10 +8,19 @@ const MyBookingsPage = async () => {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
+    const token = await auth.api.getToken({
+    headers: await headers()
+  })
   const user = session.user;
-  const res = await fetch(`http://localhost:8000/bookings/${user?.id}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/bookings/${user?.id}`,{
+    headers:{
+      authorization:`Bearer ${token?.token}`
+    }
+  }
+  );
+  // console.log('my bookings',token);
   const bookings = await res.json();
-  console.log(bookings);
+  // console.log(bookings);
   return (
     <div className="w-9/12 mx-auto my-8">
       <h1 className="text-2xl font-bold text-center my-4">My bookings</h1>
