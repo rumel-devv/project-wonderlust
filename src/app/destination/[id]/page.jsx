@@ -28,7 +28,9 @@ const DestinationDetailsPage = async ({ params }) => {
     }
   }, {cache : "no-store"})
   const destination = await res.json();
-  
+  // if(!res){
+
+  // }
   const {
     destinationName,
     country,

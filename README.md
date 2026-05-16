@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌍 WonderLust — Travel & Tourism Booking Platform
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+# ✈️ Explore Beautiful Destinations Around the World
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+A modern full-stack travel booking web application where users can discover destinations, book trips, manage bookings, and enjoy a smooth travel experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+</div>
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# 🚀 Features
 
-To learn more about Next.js, take a look at the following resources:
+- ✅ User Authentication (JWT / Better Auth)
+- ✅ Browse Popular Destinations
+- ✅ Destination Details Page
+- ✅ Book Travel Packages
+- ✅ Manage Bookings
+- ✅ Update & Delete Bookings
+- ✅ Protected Routes
+- ✅ Responsive Design
+- ✅ FAQ Section
+- ✅ Toast Notifications
+- ✅ Secure Backend API
+- ✅ Dynamic Data Fetching
+- ✅ Modern UI Design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# 🛠️ Technologies Used
 
-## Deploy on Vercel
+## Frontend
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- ⚛️ React.js
+- ⚡ Next.js
+- 🎨 Tailwind CSS
+- 🧩 Hero UI
+- 🔥 React Icons
+- 🎞️ Framer Motion
+- 🍞 React Hot Toast
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Backend
+
+- 🟢 Node.js
+- 🚂 Express.js
+- 🍃 MongoDB
+- 🔐 JWT Authentication
+- 🍪 Cookie Parser
+- 🌐 CORS
+
+---
+
+# 🧠 What I Learned From This Project
+
+### 🔹 Frontend Development
+
+- Learned how to build a full-stack application using Next.js
+- Learned dynamic routing and nested routes
+- Improved responsive design skills using Tailwind CSS
+- Learned reusable component architecture
+- Learned client-side data fetching
+
+### 🔹 Backend Development
+
+- Learned how Express.js server works
+- Learned REST API creation
+- Learned MongoDB CRUD operations
+- Learned JWT authentication & authorization
+- Learned middleware usage in Express.js
+
+### 🔹 Authentication & Security
+
+- Learned protected routes
+- Learned token verification
+- Learned cookie-based authentication
+- Learned how to secure API endpoints
+
+### 🔹 Deployment
+
+- Learned deployment with Vercel
+- Learned environment variable management
+- Learned frontend & backend connection in production
+
+---
+
+# ⚠️ Challenges & Errors I Faced
+
+## 🔥 JWT Authentication Problems
+
+- Faced unauthorized token issues
+- Had problems with token verification
+- Learned how cookies and JWT work together
+
+### Cause:
+
+Frontend was expecting JSON but server returned HTML error page.
+
+### Solution:
+
+- Fixed wrong API routes
+- Checked backend server status
+- Corrected fetch URL
+
+---
+
+## 🔥 Next.js Runtime Errors
+
+- Faced server/client component confusion
+- Learned async data fetching in Next.js
+- Fixed hydration related issues
+
+---
+
+## 🔥 MongoDB Connection Problems
+
+- Faced database connection errors
+- Learned proper `.env` configuration
+- Fixed MongoDB URI issues
+
+---
+
+## 🔥 CORS Issues
+
+- Backend blocked frontend requests
+- Learned how to configure CORS properly
+
+---
+
+# 👨‍💻 Author
+
+## MD RUMEL AHMED
+
